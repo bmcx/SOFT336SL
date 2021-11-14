@@ -9,7 +9,7 @@ Created with `c++` and `Qt`
  - About dialogs for application and Qt framework
 
 ### MacOS Screenshot:
-![Mac Screenshot](https://github.com/dev-pos/SOFT336SL/blob/main/TextEditor-P2/mac-ss.png)
+![Mac Screenshot 1](https://github.com/dev-pos/SOFT336SL/blob/main/TextEditor-P2/mac-ss-1.jpg) ![Mac Screenshot 2](https://github.com/dev-pos/SOFT336SL/blob/main/TextEditor-P2/mac-ss-2.jpg) ![Mac Screenshot 3](https://github.com/dev-pos/SOFT336SL/blob/main/TextEditor-P2/mac-ss-3.jpg) ![Mac Screenshot 4](https://github.com/dev-pos/SOFT336SL/blob/main/TextEditor-P2/mac-ss-4.jpg)
 
 ### Windows Screenshot:
 ![Windows Screenshot 1](https://github.com/dev-pos/SOFT336SL/blob/main/TextEditor-P2/win-ss-1.png) ![Windows Screenshot 2](https://github.com/dev-pos/SOFT336SL/blob/main/TextEditor-P2/win-ss-2.png) ![Windows Screenshot 3](https://github.com/dev-pos/SOFT336SL/blob/main/TextEditor-P2/win-ss-3.png) ![Windows Screenshot 4](https://github.com/dev-pos/SOFT336SL/blob/main/TextEditor-P2/win-ss-4.png)
