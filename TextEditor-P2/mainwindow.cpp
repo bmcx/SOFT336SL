@@ -35,6 +35,7 @@ MainWindow::MainWindow(const QString &fileName,QWidget *parent)
     connect(ui->textEdit, SIGNAL(textChanged()), this,SLOT(documentModified()));
 
     loadFile(fileName);
+    loadConfig();
 }
 
 MainWindow::~MainWindow()
@@ -95,6 +96,37 @@ void MainWindow::loadFile(const QString &fileName)
 void MainWindow::setFileName(const QString &fileName){
     m_fileName = fileName;
     this->setWindowTitle(QString("%1[*] - %2").arg(m_fileName.isNull()?"untitled":QFileInfo(m_fileName).fileName(), QApplication::applicationName()));
+}
+
+void MainWindow::loadConfig() {
+    try {
+        QFile f("config.txt");
+        f.open(QFile::ReadOnly|QIODevice::Text);
+
+        QTextStream stream(&f);
+        QFont font = QFont();
+
+        font.fromString(stream.readLine());
+        ui->textEdit->setFont(font);
+
+        f.close();
+    }  catch (...) {
+        return;
+    }
+}
+
+void MainWindow::saveConfig(){
+    try {
+        QFile f("config.txt");
+        f.open(QFile::WriteOnly|QIODevice::Text);
+
+        QTextStream stream(&f);
+        stream << ui->textEdit->font().toString();
+
+        f.close();
+    }  catch (...) {
+        return;
+    }
 }
 
 // --- SLOTS ---
@@ -165,7 +197,10 @@ void MainWindow::on_actionSelectFont_triggered()
 {
     bool ok;
     QFont font = QFontDialog::getFont(&ok, ui->textEdit->font(), this);
-    if(ok) ui->textEdit->setFont(font);
+    if(ok) {
+        ui->textEdit->setFont(font);
+        saveConfig();
+    }
 }
 
 

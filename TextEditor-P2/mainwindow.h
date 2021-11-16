@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QFile>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,6 +22,8 @@ public:
 private slots:
     void loadFile(const QString &fileName);
     void setFileName(const QString &fileName);
+    void saveConfig();
+    void loadConfig();
 
     void on_actionNew_triggered();
     void documentModified();
